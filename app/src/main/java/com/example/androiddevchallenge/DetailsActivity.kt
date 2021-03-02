@@ -17,7 +17,6 @@ package com.example.androiddevchallenge
 
 import android.content.Context
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.compose.setContent
@@ -54,7 +53,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val id = intent.getIntExtra("id", 0)
-        Log.e("DetailsActivity","id="+id)
+        Log.e("DetailsActivity", "id=" + id)
         detailsViewModel.catDetails.observe(this) {
             setContent {
                 activityLayout(it)
@@ -109,7 +108,7 @@ fun detailsLayout(catDetails: CatDetails) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        Log.e("DetailsActivity","id="+catDetails.id)
+        Log.e("DetailsActivity", "id=" + catDetails.id)
         val imagePainter = painterResource(getCatImageRes(catDetails.id))
         Image(
             imagePainter, "",
